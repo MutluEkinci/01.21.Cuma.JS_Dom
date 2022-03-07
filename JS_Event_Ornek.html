@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="kutuphane.js"></script>
+    <style>
+        #deneme
+        {
+            width: 200px; height: 200px; background-color: burlywood;
+        }
+        #kutu
+        {
+            width: 200px; height: 200px; background-color: lightblue;
+        }
+        .grid
+        {
+            width: 500px; height: 200px; display: grid;  grid-template-columns: 30% 30% 30%;
+            justify-content: center;
+            gap: 10px;
+            align-content: center;
+        }
+        div div
+        {
+            background-color: lightblue;
+        }
+        div{
+            background-color: wheat;
+        }
+    </style>
+    <script>
+        function renkDegistir()
+        {
+            let dv=document.getElementById("deneme");
+            dv.style.backgroundColor="red";
+        }
+        function renkDegistir2(obj)
+        {
+            obj.style.backgroundColor="blue";
+        }
+
+        function stylein(veri)
+        {
+            let dv=document.getElementById(""+veri+"");
+          
+            if(veri=="div1")
+                dv.style.backgroundColor="red";
+            else if(veri=="div2")
+                dv.style.backgroundColor="blue";
+            else if(veri=="div3")
+                dv.style.backgroundColor="green";
+
+        }
+        function styleout(veri)
+        {
+            let dv=document.getElementById(""+veri+"");
+            dv.style.backgroundColor="lightblue";
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //Soru:dive tıklayınca renk değişsin.
+
+        //Soru2:mouseover,onmouseout
+    </script>
+
+    <div class="grid">
+        <div onmouseover="stylein(this.id)" onmouseout="styleout(this.id)" id="div1">Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci</div>
+        <div onmouseover="stylein(this.id)" onmouseout="styleout(this.id)" id="div2">Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci</div>
+        <div onmouseover="stylein(this.id)" onmouseout="styleout(this.id)" id="div3">Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci Mutlu Ekinci</div>
+    </div>
+    <div id="deneme" onclick="renkDegistir()"></div>
+    <div id="kutu" onclick="renkDegistir2(this)"></div>
+</body>
+</html>

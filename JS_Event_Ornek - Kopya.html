@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="kutuphane.js"></script>
+    <style>
+        .urun,.urun1
+        {
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+        }
+        .galeri
+        {
+            width: 500px;
+            height: 200px;
+            display: grid;
+            background-color: silver;
+            grid-template-columns: 30% 30% 30%;
+            justify-content: center;
+            gap: 10px;
+            align-content: center;
+        }
+    </style>
+    <script>
+        function over(ad)
+        {
+            document.getElementById(ad).style.backgroundColor="red";
+        }
+        function out(ad)
+        {
+            document.getElementById(ad).style.backgroundColor="orange";
+        }
+        function over2(obj)
+        {
+            obj.style.backgroundColor="black";
+        }
+        function out2(obj)
+        {
+            obj.style.backgroundColor="orange";
+        }
+        function bagla()
+        {
+            let divs=document.getElementsByClassName("urun1");
+            for(let i=0;i<divs.length;i++)
+            {
+                divs[i].addEventListener("mouseover",()=>{divs[i].style.backgroundColor="green"});
+                divs[i].addEventListener("mouseout",()=>{divs[i].style.backgroundColor="orange"});
+            }
+        }
+    </script>
+</head>
+<body onload="bagla()">
+    <script>
+        
+    </script>
+    <div class="galeri">
+        <div id= "bir" class="urun" onmouseover="over('bir')" onmouseout="out('bir')"></div>
+        <div id= "iki" class="urun" onmouseover="over('iki')" onmouseout="out('iki')"></div>
+        <div id= "üc" class="urun" onmouseover="over('üc')" onmouseout="out('üc')"></div>
+    </div>
+    <br>
+    <div class="galeri">
+        <div class="urun" onmouseover="over2(this)" onmouseout="out2(this)"></div>
+        <div class="urun" onmouseover="over2(this)" onmouseout="out2(this)"></div>
+        <div class="urun" onmouseover="over2(this)" onmouseout="out2(this)"></div>
+    </div>
+    <br>
+    <div class="galeri">
+        <div class="urun1"></div>
+        <div class="urun1"></div>
+        <div class="urun1"></div>
+    </div>
+
+    
+</body>
+</html>

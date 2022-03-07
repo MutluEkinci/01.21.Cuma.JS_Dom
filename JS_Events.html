@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Mesaj()
+        {
+            alert("Merhaba...");
+        }
+        function olayBagla()
+        {
+            let btn=document.getElementById("sptCikar");
+            btn.onclick=function(){
+                alert("Dinamik olay bağlama DOM1");
+            }
+        }
+
+        function islem()
+        {
+            alert("İslem metodu ...")
+        }
+
+        function olayBaglaEvLis()
+        {
+            let btn=document.getElementById("sptCikar");
+
+            //1-Ayrı bir metod ile kullanılır.
+            //btn.addEventListener("click",islem);
+
+            //2-Arrow Op.
+            btn.addEventListener("click",()=>{alert("Arrow Op.")});
+        }
+        function kontrolEt()
+        {
+            return false;
+            //return değeri döndüğü için bunu yakalamak adına onclick'e return yazarak metodu çağırırız.
+        }
+        function yukle()
+        {
+            //olayBagla();
+            olayBaglaEvLis();
+            kontrolEt();
+        }
+    </script>
+</head>
+<body onload="yukle()">
+    <!-- Event:Belli bir olaya bağlı olarak bir şeyin tetiklenmesine event denir. -->
+    
+    <!-- 1.Yontem-Doğrudan olayın tanımlandığı yerde kod yazılabilir. -->
+    <button onclick="alert('Sepete Eklendi')">Sepete Ekle</button>
+    <!-- 2.Yontem-Metod Çağırılması -->
+    <button onclick="Mesaj()">Merhaba</button>
+    <!-- 3.Yöntem-Dom1 Dinamik metod bağlama.Tüm döküman yüklendikten sonra bağlama yapılmalı -->
+    <button id="sptCikar">Sepetten Çıkar</button>
+    
+    <script>
+       // olayBagla();
+    </script>
+
+    <form action="">
+        <input type="text" name="ad" id="ad"/>
+        <!-- return değeri döndüğü için bunu yakalamak adına onclick'e return yazarak metodu çağırırız. -->
+        <input type="submit" onclick="return kontrolEt()" value="Gönder"/>
+    </form>
+</body>
+</html>
